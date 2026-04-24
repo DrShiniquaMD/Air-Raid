@@ -19,7 +19,7 @@ class Health(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.y += 5
-        if self.rect.bottom > SCREEN_HEIGHT:
+        if self.rect.top > SCREEN_HEIGHT:
             self.kill()
 
         if self.rect.colliderect(self.player.rect):
@@ -39,7 +39,7 @@ class Boost(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.y += 5
-        if self.rect.bottom > SCREEN_HEIGHT:
+        if self.rect.top > SCREEN_HEIGHT:
             self.kill()
 
         if self.rect.colliderect(self.player.rect):
@@ -58,7 +58,7 @@ class TriBoost(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.y += 5
-        if self.rect.bottom > SCREEN_HEIGHT:
+        if self.rect.top > SCREEN_HEIGHT:
             self.kill()
 
         if self.rect.colliderect(self.player.rect):

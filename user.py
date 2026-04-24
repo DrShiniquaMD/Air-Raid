@@ -42,6 +42,8 @@ class Peaship(pygame.sprite.Sprite):
 
         triple_boost_cooldown = random.randrange(15000, 30000)
 
+        boost_type = random.randrange(0, 2)
+
         # Cooldown for shooting
         if self.available == False and self.last_boosted + boost_length > current_time:
             cooldown = 50
@@ -105,14 +107,14 @@ class Peaship(pygame.sprite.Sprite):
             self.heal_group.add(shine)
 
             self.last_healed = current_time
-
-        if current_time - self.last_boosted > boost_cooldown:
+        
+        if current_time - self.last_boosted > boost_cooldown and boost_type == 0:
             leaf = Boost(random.randrange(0, 630), -75, images["food"], self)
             self.boost_group.add(leaf)
 
             self.last_boosted = current_time
 
-        if current_time - self.last_boosted > triple_boost_cooldown:
+        if current_time - self.last_boosted > triple_boost_cooldown and boost_type == 1:
             tacos = TriBoost(random.randrange(0, 630), -75, images["taco"], self)
             self.triboost_group.add(tacos)
 
