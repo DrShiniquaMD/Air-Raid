@@ -4,8 +4,6 @@
 
 ![Gameplay Demo](demo.gif)
 
-*(Replace `demo.gif` with your actual file or a video link if you prefer)*
-
 ---
 
 ## Overview
